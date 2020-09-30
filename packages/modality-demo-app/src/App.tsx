@@ -1,28 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { HelloWorld } from "@modality/router";
+import { ModalBase, ModalProvider } from "@modality/modal";
 
-function App() {
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <HelloWorld />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ModalProvider>
+      <h1>Modality Demo App</h1>
+      <p>Welcome to Modality</p>
+      <ModalBase mounted>
+        <h2>1.0 This is some modal content</h2>
+      </ModalBase>
+      <ModalBase mounted>
+        <h2>2.0 This is some other modal content</h2>
+        <ModalBase mounted>
+          <h2>2.1 This is some weird nested modal content</h2>
+        </ModalBase>
+      </ModalBase>
+    </ModalProvider>
   );
-}
-
-export default App;
+};

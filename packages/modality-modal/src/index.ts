@@ -1,2 +1,1 @@
-export { ModalProvider } from "./ModalProvider";
-export { ModalBase } from "./ModalBase";
+export { Modal } from "./components/modal";
